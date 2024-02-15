@@ -237,7 +237,7 @@ def LinearRegressionModel():
         # Visualization
         fig, ax = plt.subplots()
         ax.scatter(X_test[input_column], y_test, color='blue', label='Actual')
-        ax.plot(X_test[input_column], y_pred, color='red', linewidth=3, label='Predicted')
+        ax.plot(X_test[input_column].values, y_pred, color='red', linewidth=3, label='Predicted')
         ax.set_xlabel(input_column)
         ax.set_ylabel(target_column)
         ax.legend()

@@ -226,13 +226,23 @@ def LinearRegressionModel():
         st.table(coff_df)
 
     # Visualization
+        # fig, ax = plt.subplots()
+        # ax.scatter(X_test, y_test, color='blue', label='Actual')
+        # ax.plot(X_test, y_pred, color='red', linewidth=3, label='Predicted')
+        # ax.set_xlabel(input_column)
+        # ax.set_ylabel(target_column)
+        # ax.legend()
+        # st.pyplot(fig)
+
+        # Visualization
         fig, ax = plt.subplots()
-        ax.scatter(X_test, y_test, color='blue', label='Actual')
-        ax.plot(X_test, y_pred, color='red', linewidth=3, label='Predicted')
+        ax.scatter(X_test[input_column], y_test, color='blue', label='Actual')
+        ax.plot(X_test[input_column], y_pred, color='red', linewidth=3, label='Predicted')
         ax.set_xlabel(input_column)
         ax.set_ylabel(target_column)
         ax.legend()
         st.pyplot(fig)
+
     # download the prediction and actjual csb
         st.subheader("Download Actual vs Predicted as csv")
         pred_actual = pd.DataFrame({'Actual':y_test,'Predicted':y_pred})

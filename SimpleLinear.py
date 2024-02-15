@@ -43,9 +43,16 @@ def IntroPage():
         unsafe_allow_html=True
     )
 
-    path = "/Users/harsimranjitsingh/Desktop/machine_learning/Simple_linear/SimpleLinear copy.png"
-    print(os.path.exists(path))
-    st.image(path,use_column_width=True)
+
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+
+
+    image_path = os.path.join(current_dir, 'SimpleLinear.png')
+
+
+    st.image(image_path, caption='Demo Image', use_column_width=True)
+
+
     # st.image('./SimpleLinear.png', caption="Your Image Caption", use_column_width=True)
 
     st.markdown("""
@@ -144,7 +151,7 @@ from sklearn.linear_model import LinearRegression''')
     plt.xlabel('Input')
     plt.ylabel('Output')
     ''')
-    st.image(path,use_column_width=True)
+    st.image(image_path,use_column_width=True)
     st.markdown('''
     ### Accuracy:(R2_score)
     To compute the Accuracy we can use the r2_socre which provides that how good our model is
